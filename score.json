@@ -1,0 +1,44 @@
+{
+    "shambles": {
+        "Brackenhide Hollow": {
+            "key_level": 17,
+            "percent": 76,
+            "plus": "++"
+        },
+        "Freehold": {
+            "key_level": 19,
+            "percent": 86,
+            "plus": "+"
+        },
+        "Halls of Infusion": {
+            "key_level": 21,
+            "percent": 128,
+            "plus": null
+        },
+        "Neltharion's Lair": {
+            "key_level": 20,
+            "percent": 98,
+            "plus": "+"
+        },
+        "Neltharus": {
+            "key_level": 16,
+            "percent": 71,
+            "plus": "++"
+        },
+        "The Underrot": {
+            "key_level": 20,
+            "percent": 83,
+            "plus": "+"
+        },
+        "The Vortex Pinnacle": {
+            "key_level": 16,
+            "percent": 81,
+            "plus": "+"
+        },
+        "Uldaman: Legacy of Tyr": {
+            "key_level": 21,
+            "percent": 148,
+            "plus": null
+        }
+    }
+}
