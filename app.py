@@ -21,6 +21,3 @@ def api_scanner_count():
 def debug():
     return "asd"
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
