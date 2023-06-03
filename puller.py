@@ -2,7 +2,7 @@ import requests
 import json
 import datetime
 def get_key(team, level):
-    r = requests.get(f'https://raider.io/api/teams/mythic-plus/dungeon-runs?season=season-df-2&team={team}&region=us&dungeon={level}', auth=('user', 'pass'))
+    r = requests.get(f'https://raider.io/api/teams/mythic-plus/dungeon-runs?season=season-df-2&team={team}&region=us&dungeon={level}', timeout=30)
     text = r.json()
     return text["viewTeamMythicPlusDungeonRunsApi"]["runs"]
 
