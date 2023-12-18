@@ -114,9 +114,6 @@ function generateTable(team, tlengh, data) {
   jumbo_inner.appendChild(team_h1)
   jumbo_inner.appendChild(tbl)
   jumbo.appendChild(jumbo_inner)
-
-
-
   document.body.appendChild(jumbo);
 
 
