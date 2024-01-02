@@ -1,44 +1,194 @@
 {
-    "shambles": {
-        "Brackenhide Hollow": {
-            "key_level": 17,
-            "percent": 76,
-            "plus": "++"
+    "dadslammers": {
+        "Atal'Dazar": {
+            "Fortified": {
+                "key_level": 28,
+                "percent": 130,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 81,
+                "plus": "+"
+            }
         },
-        "Freehold": {
-            "key_level": 19,
-            "percent": 86,
-            "plus": "+"
+        "Black Rook Hold": {
+            "Fortified": {
+                "key_level": 25,
+                "percent": 84,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 27,
+                "percent": 95,
+                "plus": "+"
+            }
         },
-        "Halls of Infusion": {
-            "key_level": 21,
-            "percent": 128,
-            "plus": null
+        "DOTI: Galakrond's Fall": {
+            "Fortified": {
+                "key_level": 27,
+                "percent": 93,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 26,
+                "percent": 108,
+                "plus": ""
+            }
         },
-        "Neltharion's Lair": {
-            "key_level": 20,
-            "percent": 98,
-            "plus": "+"
+        "DOTI: Murozond's Rise": {
+            "Fortified": {
+                "key_level": 26,
+                "percent": 114,
+                "plus": ""
+            },
+            "Tyrannical": {}
         },
-        "Neltharus": {
-            "key_level": 16,
-            "percent": 71,
-            "plus": "++"
+        "Darkheart Thicket": {
+            "Fortified": {
+                "key_level": 26,
+                "percent": 97,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 24,
+                "percent": 79,
+                "plus": "++"
+            }
         },
-        "The Underrot": {
-            "key_level": 20,
-            "percent": 83,
-            "plus": "+"
+        "The Everbloom": {
+            "Fortified": {
+                "key_level": 25,
+                "percent": 108,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 94,
+                "plus": "+"
+            }
         },
-        "The Vortex Pinnacle": {
-            "key_level": 16,
-            "percent": 81,
-            "plus": "+"
+        "Throne of the Tides": {
+            "Fortified": {
+                "key_level": 24,
+                "percent": 94,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 90,
+                "plus": "+"
+            }
         },
-        "Uldaman: Legacy of Tyr": {
-            "key_level": 21,
-            "percent": 148,
-            "plus": null
+        "Waycrest Manor": {
+            "Fortified": {
+                "key_level": 26,
+                "percent": 92,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 26,
+                "percent": 94,
+                "plus": "+"
+            }
+        }
+    },
+    "fomx": {
+        "Atal'Dazar": {
+            "Fortified": {
+                "key_level": 25,
+                "percent": 89,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 100,
+                "plus": "+"
+            }
+        },
+        "Black Rook Hold": {
+            "Fortified": {
+                "key_level": 26,
+                "percent": 102,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 87,
+                "plus": "+"
+            }
+        },
+        "DOTI: Galakrond's Fall": {
+            "Fortified": {
+                "key_level": 25,
+                "percent": 81,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 86,
+                "plus": "+"
+            }
+        },
+        "DOTI: Murozond's Rise": {
+            "Fortified": {
+                "key_level": 23,
+                "percent": 101,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 24,
+                "percent": 100,
+                "plus": ""
+            }
+        },
+        "Darkheart Thicket": {
+            "Fortified": {
+                "key_level": 25,
+                "percent": 105,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 98,
+                "plus": "+"
+            }
+        },
+        "The Everbloom": {
+            "Fortified": {
+                "key_level": 23,
+                "percent": 123,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 24,
+                "percent": 90,
+                "plus": "+"
+            }
+        },
+        "Throne of the Tides": {
+            "Fortified": {
+                "key_level": 23,
+                "percent": 99,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 24,
+                "percent": 92,
+                "plus": "+"
+            }
+        },
+        "Waycrest Manor": {
+            "Fortified": {
+                "key_level": 26,
+                "percent": 99,
+                "plus": "+"
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 105,
+                "plus": ""
+            }
         }
     }
 }
