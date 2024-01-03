@@ -1,192 +1,98 @@
 {
-    "dadslammers": {
+    "goodwill-lingerie": {
         "Atal'Dazar": {
             "Fortified": {
-                "key_level": 28,
-                "percent": 130,
-                "plus": ""
+                "key_level": 15,
+                "percent": 86,
+                "plus": "+"
             },
             "Tyrannical": {
-                "key_level": 25,
-                "percent": 81,
+                "key_level": 20,
+                "percent": 91,
                 "plus": "+"
             }
         },
         "Black Rook Hold": {
             "Fortified": {
-                "key_level": 25,
-                "percent": 84,
-                "plus": "+"
+                "key_level": 0,
+                "percent": 0,
+                "plus": ""
             },
             "Tyrannical": {
-                "key_level": 27,
-                "percent": 95,
-                "plus": "+"
+                "key_level": 20,
+                "percent": 76,
+                "plus": "++"
             }
         },
         "DOTI: Galakrond's Fall": {
             "Fortified": {
-                "key_level": 27,
-                "percent": 93,
-                "plus": "+"
+                "key_level": 18,
+                "percent": 67,
+                "plus": "++"
             },
             "Tyrannical": {
-                "key_level": 26,
-                "percent": 108,
-                "plus": ""
-            }
-        },
-        "DOTI: Murozond's Rise": {
-            "Fortified": {
-                "key_level": 26,
-                "percent": 114,
-                "plus": ""
-            },
-            "Tyrannical": {}
-        },
-        "Darkheart Thicket": {
-            "Fortified": {
-                "key_level": 26,
-                "percent": 97,
-                "plus": "+"
-            },
-            "Tyrannical": {
-                "key_level": 24,
+                "key_level": 20,
                 "percent": 79,
                 "plus": "++"
             }
         },
-        "The Everbloom": {
-            "Fortified": {
-                "key_level": 25,
-                "percent": 108,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 25,
-                "percent": 94,
-                "plus": "+"
-            }
-        },
-        "Throne of the Tides": {
-            "Fortified": {
-                "key_level": 24,
-                "percent": 94,
-                "plus": "+"
-            },
-            "Tyrannical": {
-                "key_level": 25,
-                "percent": 90,
-                "plus": "+"
-            }
-        },
-        "Waycrest Manor": {
-            "Fortified": {
-                "key_level": 26,
-                "percent": 92,
-                "plus": "+"
-            },
-            "Tyrannical": {
-                "key_level": 26,
-                "percent": 94,
-                "plus": "+"
-            }
-        }
-    },
-    "fomx": {
-        "Atal'Dazar": {
-            "Fortified": {
-                "key_level": 25,
-                "percent": 89,
-                "plus": "+"
-            },
-            "Tyrannical": {
-                "key_level": 25,
-                "percent": 100,
-                "plus": "+"
-            }
-        },
-        "Black Rook Hold": {
-            "Fortified": {
-                "key_level": 26,
-                "percent": 102,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 25,
-                "percent": 87,
-                "plus": "+"
-            }
-        },
-        "DOTI: Galakrond's Fall": {
-            "Fortified": {
-                "key_level": 25,
-                "percent": 81,
-                "plus": "+"
-            },
-            "Tyrannical": {
-                "key_level": 25,
-                "percent": 86,
-                "plus": "+"
-            }
-        },
         "DOTI: Murozond's Rise": {
             "Fortified": {
-                "key_level": 23,
-                "percent": 101,
+                "key_level": 0,
+                "percent": 0,
                 "plus": ""
             },
             "Tyrannical": {
-                "key_level": 24,
-                "percent": 100,
-                "plus": ""
+                "key_level": 20,
+                "percent": 99,
+                "plus": "+"
             }
         },
         "Darkheart Thicket": {
             "Fortified": {
-                "key_level": 25,
+                "key_level": 20,
                 "percent": 105,
                 "plus": ""
             },
             "Tyrannical": {
-                "key_level": 25,
-                "percent": 98,
-                "plus": "+"
+                "key_level": 21,
+                "percent": 110,
+                "plus": ""
             }
         },
         "The Everbloom": {
             "Fortified": {
-                "key_level": 23,
-                "percent": 123,
-                "plus": ""
+                "key_level": 19,
+                "percent": 81,
+                "plus": "+"
             },
             "Tyrannical": {
-                "key_level": 24,
-                "percent": 90,
+                "key_level": 20,
+                "percent": 85,
                 "plus": "+"
             }
         },
         "Throne of the Tides": {
             "Fortified": {
-                "key_level": 23,
-                "percent": 99,
+                "key_level": 20,
+                "percent": 82,
                 "plus": "+"
             },
             "Tyrannical": {
-                "key_level": 24,
-                "percent": 92,
+                "key_level": 20,
+                "percent": 90,
                 "plus": "+"
             }
         },
         "Waycrest Manor": {
             "Fortified": {
-                "key_level": 26,
-                "percent": 99,
+                "key_level": 20,
+                "percent": 85,
                 "plus": "+"
             },
             "Tyrannical": {
-                "key_level": 25,
-                "percent": 105,
+                "key_level": 0,
+                "percent": 0,
                 "plus": ""
             }
         }

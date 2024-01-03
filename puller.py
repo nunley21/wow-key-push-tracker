@@ -2,10 +2,15 @@ import requests
 import json
 import datetime
 def get_key(team, level):
-    r = requests.get(f'https://raider.io/api/teams/mythic-plus/dungeon-runs?season=season-df-3&team={team}&region=us&dungeon={level}', timeout=30)
+    url = f'https://raider.io/api/teams/mythic-plus/dungeon-runs?season=season-df-3&team={team}&region=us&dungeon={level}'
+    r = requests.get(url, timeout=60)
     text = r.json()
-    return text["viewTeamMythicPlusDungeonRunsApi"]["runs"]
+    try:
+        return text["viewTeamMythicPlusDungeonRunsApi"]["runs"]
+    except:
+        return json.loads('{"viewTeamMythicPlusDungeonRunsApi":{"runs":[],"ui":{"season":"season-df-3","team":"'+team+'","region":"us","dungeon":"'+level+'","namespace":"default"}}}')["viewTeamMythicPlusDungeonRunsApi"]["runs"]
 
+        # return json.loads('{"viewTeamMythicPlusDungeonRunsApi":{"runs":[{"summary":{"season":"season-df-3","status":"finished","dungeon":{"id":7673,"name":"Darkheart Thicket","short_name":"DHT","slug":"darkheart-thicket","expansion_id":6,"icon_url":"/images/wow/icons/large/achievement_dungeon_darkheartthicket.jpg","patch":"7.0","keystone_timer_ms":1800999,"num_bosses":4,"group_finder_activity_ids":[426,436,446,460]},"keystone_run_id":2440367,"mythic_level":17,"clear_time_ms":1553612,"keystone_time_ms":1800999,"completed_at":"2023-11-20T03:51:33.000Z","num_chests":1,"time_remaining_ms":247387,"logged_run_id":966105,"videos":[],"weekly_modifiers":[{"id":10,"icon":"ability_toughness","name":"Fortified","description":"Non-boss enemies have 20% more health and inflict up to 30% increased damage."},{"id":136,"icon":"achievement_boss_anomalus","name":"Incorporeal","description":"While in combat, incorporeal beings periodically appear and attempt to weaken players."},{"id":8,"icon":"spell_shadow_bloodboil","name":"Sanguine","description":"When slain, non-boss enemies leave behind a lingering pool of ichor that heals their allies and damages players."}],"num_modifiers_active":3,"faction":"alliance","deleted_at":null,"role":"tank"},"score":150.71701233593134}],"ui":{"season":"season-df-3","team":"manastorm-apologists","region":"us","dungeon":"darkheart-thicket","namespace":"default"}}}')["viewTeamMythicPlusDungeonRunsApi"]["runs"]
 
 def get_chest_plus(plus_count):
     if plus_count == 0:
@@ -29,39 +34,63 @@ def main():
         top = {}
 
         for dungeon in dungeons:
+
+
             team = team.strip("\n")
             dungeon = dungeon.strip("\n")
             data = get_key(team, dungeon)
             keys_store_fort = []
             keys_store_tryan = []
-            for key in data:
-                if key['summary']['status'] == "finished":
-                    if key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
-                        keys_store_tryan.append(key['summary']['mythic_level'])
-                    elif key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
-                        keys_store_fort.append(key['summary']['mythic_level'])
-            try:
-                max_key_fort = max(keys_store_fort)
-            except:
-                max_key_fort = 0
-            try:
-                max_key_tryan = max(keys_store_tryan)
-            except:
-                max_key_tryan = 0
-            try:
-                top_keys = {"Fortified": {}, "Tyrannical": {}}
+            top_keys = {"Fortified": {}, "Tyrannical": {}}
+            if data:
                 for key in data:
-                    if max_key_fort == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
-                        key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
-                        plus = get_chest_plus(key['summary']['num_chests'])
-                        top_keys["Fortified"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
-                    if max_key_tryan == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
-                        key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
-                        plus = get_chest_plus(key['summary']['num_chests'])
-                        top_keys["Tyrannical"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
-                    top[key['summary']['dungeon']['name']] = top_keys
-            except Exception as e:
-                print(e)
+
+                    if key['summary']['status'] == "finished":
+                        if key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
+                            keys_store_tryan.append(key['summary']['mythic_level'])
+                        elif key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
+                            keys_store_fort.append(key['summary']['mythic_level'])
+                try:
+                    max_key_fort = max(keys_store_fort)
+
+                except:
+                    max_key_fort = 0
+                    top_keys["Fortified"] = {"key_level": 0, "percent": 0,
+                                              "plus": ""}
+                try:
+                    max_key_tryan = max(keys_store_tryan)
+                except:
+                    max_key_tryan = 0
+                    top_keys["Tyrannical"] = {"key_level": 0, "percent": 0,
+                                              "plus": ""}
+
+                try:
+
+                    for key in data:
+                        if max_key_fort == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
+                            if key['summary']['mythic_level'] != 0:
+                                key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
+                                plus = get_chest_plus(key['summary']['num_chests'])
+                                top_keys["Fortified"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
+                            else:
+                                print("asd")
+                        if max_key_tryan == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
+                            if key['summary']['mythic_level'] != 0:
+                                key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
+                                plus = get_chest_plus(key['summary']['num_chests'])
+                                top_keys["Tyrannical"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
+                            else:
+                                print("asd")
+                        top[key['summary']['dungeon']['name']] = top_keys
+
+
+                except Exception as e:
+                    print(e)
+            else:
+                top_keys["Tyrannical"] = {"key_level": 0, "percent": 0, "plus": ""}
+                top_keys["Fortified"] = {"key_level": 0, "percent": 0, "plus": ""}
+                top[dungeon] = top_keys
+
 
 
         team_store[team] = top
