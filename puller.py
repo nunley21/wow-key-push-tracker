@@ -1,9 +1,19 @@
 import requests
 import json
+import os
+import time
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
 import datetime
 def get_key(team, level):
+    s = requests.Session()
+    retries = Retry(total=10,
+                    status_forcelist=[443, 429, 500, 502, 503, 504])
+    s.mount('http://', HTTPAdapter(max_retries=retries))
+
     url = f'https://raider.io/api/teams/mythic-plus/dungeon-runs?season=season-df-3&team={team}&region=us&dungeon={level}'
-    r = requests.get(url, timeout=60)
+    r = s.get(url, timeout=120)
     text = r.json()
     try:
         return text["viewTeamMythicPlusDungeonRunsApi"]["runs"]
@@ -24,80 +34,93 @@ def get_chest_plus(plus_count):
 
 
 def main():
-    with open("teams.txt", "r") as file:
-        teams = file.readlines()
-    with open("dungeon.txt", "r") as file:
-        dungeons = file.readlines()
-    team_store = {}
-    for team in teams:
-        print(team.strip("\n"))
-        top = {}
-
-        for dungeon in dungeons:
+    st = os.stat('score.json')
+    mtime = st.st_mtime
+    c_time = time.time()
+    dtime = c_time - mtime
+    if dtime > 240:
 
 
-            team = team.strip("\n")
-            dungeon = dungeon.strip("\n")
-            data = get_key(team, dungeon)
-            keys_store_fort = []
-            keys_store_tryan = []
-            top_keys = {"Fortified": {}, "Tyrannical": {}}
-            if data:
-                for key in data:
 
-                    if key['summary']['status'] == "finished":
-                        if key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
-                            keys_store_tryan.append(key['summary']['mythic_level'])
-                        elif key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
-                            keys_store_fort.append(key['summary']['mythic_level'])
-                try:
-                    max_key_fort = max(keys_store_fort)
+        with open("teams.txt", "r") as file:
+            teams = file.readlines()
+        with open("dungeon.txt", "r") as file:
+            dungeons = file.readlines()
+        team_store = {}
+        for team in teams:
+            print(team.strip("\n"))
+            top = {}
 
-                except:
-                    max_key_fort = 0
-                    top_keys["Fortified"] = {"key_level": 0, "percent": 0,
-                                              "plus": ""}
-                try:
-                    max_key_tryan = max(keys_store_tryan)
-                except:
-                    max_key_tryan = 0
-                    top_keys["Tyrannical"] = {"key_level": 0, "percent": 0,
-                                              "plus": ""}
+            for dungeon in dungeons:
 
-                try:
 
+                team = team.strip("\n")
+                dungeon = dungeon.strip("\n")
+                data = get_key(team, dungeon)
+                keys_store_fort = []
+                keys_store_tryan = []
+                top_keys = {"Fortified": {}, "Tyrannical": {}}
+                if data:
                     for key in data:
-                        if max_key_fort == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
-                            if key['summary']['mythic_level'] != 0:
-                                key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
-                                plus = get_chest_plus(key['summary']['num_chests'])
-                                top_keys["Fortified"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
-                            else:
-                                print("asd")
-                        if max_key_tryan == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
-                            if key['summary']['mythic_level'] != 0:
-                                key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
-                                plus = get_chest_plus(key['summary']['num_chests'])
-                                top_keys["Tyrannical"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
-                            else:
-                                print("asd")
-                        top[key['summary']['dungeon']['name']] = top_keys
+
+                        if key['summary']['status'] == "finished":
+                            if key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
+                                keys_store_tryan.append(key['summary']['mythic_level'])
+                            elif key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
+                                keys_store_fort.append(key['summary']['mythic_level'])
+                    try:
+                        max_key_fort = max(keys_store_fort)
+
+                    except:
+                        max_key_fort = 0
+                        top_keys["Fortified"] = {"key_level": 0, "percent": 0,
+                                                  "plus": ""}
+                    try:
+                        max_key_tryan = max(keys_store_tryan)
+                    except:
+                        max_key_tryan = 0
+                        top_keys["Tyrannical"] = {"key_level": 0, "percent": 0,
+                                                  "plus": ""}
+
+                    try:
+
+                        for key in data:
+                            if max_key_fort == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
+                                if key['summary']['mythic_level'] != 0:
+                                    key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
+                                    plus = get_chest_plus(key['summary']['num_chests'])
+                                    top_keys["Fortified"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
+                                else:
+                                    print("asd")
+                            if max_key_tryan == key['summary']['mythic_level'] and key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
+                                if key['summary']['mythic_level'] != 0:
+                                    key_time = round((key['summary']["clear_time_ms"] / key['summary']["keystone_time_ms"]) * 100)
+                                    plus = get_chest_plus(key['summary']['num_chests'])
+                                    top_keys["Tyrannical"] = {"key_level": key['summary']['mythic_level'], "percent": key_time, "plus": plus}
+                                else:
+                                    print("asd")
+                            top[key['summary']['dungeon']['name']] = top_keys
 
 
-                except Exception as e:
-                    print(e)
-            else:
-                top_keys["Tyrannical"] = {"key_level": 0, "percent": 0, "plus": ""}
-                top_keys["Fortified"] = {"key_level": 0, "percent": 0, "plus": ""}
-                top[dungeon] = top_keys
+                    except Exception as e:
+                        print(e)
+                else:
+                    top_keys["Tyrannical"] = {"key_level": 0, "percent": 0, "plus": ""}
+                    top_keys["Fortified"] = {"key_level": 0, "percent": 0, "plus": ""}
+                    top[dungeon] = top_keys
 
 
 
-        team_store[team] = top
+            team_store[team] = top
 
 
 
-    return team_store
+        return team_store
+    else:
+        with open('score.json') as f:
+            print("using old data")
+            return json.load(f)
+
 
 
 

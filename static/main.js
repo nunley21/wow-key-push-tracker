@@ -1,6 +1,5 @@
 $.getJSON('/api/get_all', function(data) {
 
-    console.log(data);
     buildTables(data)
 
 
@@ -34,21 +33,35 @@ function buildTables(data) {
         groupTable.classList.add('table', 'table-striped', 'table-bordered', 'table-primary', 'text-center')
         groupTable.innerHTML = `
       <thead>
-        <tr>
-          <th>Affix</th>
-          <th>Atal'Dazar</th>
-          <th>Black Rook Hold</th>
-          <th>DOTI: Galakrond's Fall</th>
-          <th>DOTI: Murozond's Rise</th>
-          <th>Darkheart Thicket</th>
-          <th>The Everbloom</th>
-          <th>Throne of the Tides</th>
-          <th>Waycrest Manor</th>
-       
-        </tr>
       </thead>
       <tbody>
     `;
+        let header_row = document.createElement("tr")
+        let header_affix = document.createElement("th")
+        let affix_cell = document.createTextNode("Affix")
+        header_affix.appendChild(affix_cell)
+        header_row.appendChild(header_affix)
+
+        for (let dungeonName in groupData) {
+
+            dungeonName = dungeonName.split("-")
+
+            for (let i = 0; i < dungeonName.length; i++) {
+                dungeonName[i] = dungeonName[i][0].toUpperCase() + dungeonName[i].substr(1);
+            }
+            dungeonName = dungeonName.join(" ")
+            let keynamecell = document.createElement("th")
+            let keynametxt = document.createTextNode(dungeonName)
+            keynamecell.appendChild(keynametxt)
+            header_row.appendChild(keynamecell)
+
+
+
+        }
+        groupTable.querySelector('thead').appendChild(header_row)
+
+
+
 
         // Create an array to store dungeon names
 
