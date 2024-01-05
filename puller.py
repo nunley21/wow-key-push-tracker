@@ -38,6 +38,7 @@ def main():
     mtime = st.st_mtime
     c_time = time.time()
     dtime = c_time - mtime
+    print(dtime)
     if dtime > 240:
 
 
