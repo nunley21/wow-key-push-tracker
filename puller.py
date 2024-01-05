@@ -38,6 +38,7 @@ def main():
     mtime = st.st_mtime
     c_time = time.time()
     dtime = c_time - mtime
+    print(c_time, mtime)
     print(dtime)
     if dtime > 240:
 
@@ -113,6 +114,8 @@ def main():
 
 
             team_store[team] = top
+
+            json.dump(team_store, open('score.json', 'w'), sort_keys=True, indent=4, separators=(',', ': '))
 
 
 
