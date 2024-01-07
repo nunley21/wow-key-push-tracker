@@ -43,7 +43,7 @@ def main():
 
 
 
-    if dtime > 240  and len(json_file) == 6:
+    if dtime > 240  or len(json_file) != 6:
 
 
 
