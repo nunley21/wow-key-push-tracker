@@ -1,15 +1,39 @@
 {
     "drunken-lizards": {
-        "ataldazar": {
+        "Atal'Dazar": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
             },
             "Tyrannical": {
+                "key_level": 21,
+                "percent": 69,
+                "plus": "++"
+            }
+        },
+        "DOTI: Galakrond's Fall": {
+            "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 18,
+                "percent": 47,
+                "plus": "+++"
+            }
+        },
+        "Throne of the Tides": {
+            "Fortified": {
+                "key_level": 0,
+                "percent": 0,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 21,
+                "percent": 72,
+                "plus": "++"
             }
         },
         "black-rook-hold": {
@@ -36,18 +60,6 @@
                 "plus": ""
             }
         },
-        "doti-galakronds-fall": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
         "doti-murozonds-rise": {
             "Fortified": {
                 "key_level": 0,
@@ -61,18 +73,6 @@
             }
         },
         "everbloom": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
-        "throne-of-the-tides": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
@@ -203,9 +203,9 @@
                 "plus": ""
             },
             "Tyrannical": {
-                "key_level": 21,
-                "percent": 68,
-                "plus": "++"
+                "key_level": 25,
+                "percent": 90,
+                "plus": "+"
             }
         },
         "Black Rook Hold": {
@@ -215,9 +215,21 @@
                 "plus": ""
             },
             "Tyrannical": {
-                "key_level": 23,
-                "percent": 72,
-                "plus": "++"
+                "key_level": 25,
+                "percent": 86,
+                "plus": "+"
+            }
+        },
+        "DOTI: Galakrond's Fall": {
+            "Fortified": {
+                "key_level": 0,
+                "percent": 0,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 25,
+                "percent": 85,
+                "plus": "+"
             }
         },
         "Waycrest Manor": {
@@ -233,18 +245,6 @@
             }
         },
         "darkheart-thicket": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
-        "doti-galakronds-fall": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
@@ -392,16 +392,52 @@
         }
     },
     "sitomeys-friends": {
-        "ataldazar": {
+        "Atal'Dazar": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
             },
             "Tyrannical": {
+                "key_level": 21,
+                "percent": 79,
+                "plus": "++"
+            }
+        },
+        "DOTI: Galakrond's Fall": {
+            "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 18,
+                "percent": 56,
+                "plus": "+++"
+            }
+        },
+        "The Everbloom": {
+            "Fortified": {
+                "key_level": 0,
+                "percent": 0,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 18,
+                "percent": 60,
+                "plus": "++"
+            }
+        },
+        "Waycrest Manor": {
+            "Fortified": {
+                "key_level": 0,
+                "percent": 0,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 22,
+                "percent": 94,
+                "plus": "+"
             }
         },
         "black-rook-hold": {
@@ -428,18 +464,6 @@
                 "plus": ""
             }
         },
-        "doti-galakronds-fall": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
         "doti-murozonds-rise": {
             "Fortified": {
                 "key_level": 0,
@@ -452,31 +476,7 @@
                 "plus": ""
             }
         },
-        "everbloom": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
         "throne-of-the-tides": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
-        "waycrest-manor": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
@@ -490,43 +490,55 @@
         }
     },
     "team-two": {
-        "ataldazar": {
+        "Atal'Dazar": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
             },
             "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
+                "key_level": 18,
+                "percent": 49,
+                "plus": "+++"
             }
         },
-        "black-rook-hold": {
+        "Black Rook Hold": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
             },
             "Tyrannical": {
+                "key_level": 21,
+                "percent": 63,
+                "plus": "++"
+            }
+        },
+        "DOTI: Galakrond's Fall": {
+            "Fortified": {
                 "key_level": 0,
                 "percent": 0,
                 "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 21,
+                "percent": 58,
+                "plus": "+++"
+            }
+        },
+        "Waycrest Manor": {
+            "Fortified": {
+                "key_level": 0,
+                "percent": 0,
+                "plus": ""
+            },
+            "Tyrannical": {
+                "key_level": 18,
+                "percent": 49,
+                "plus": "+++"
             }
         },
         "darkheart-thicket": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
-        "doti-galakronds-fall": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,
@@ -563,18 +575,6 @@
             }
         },
         "throne-of-the-tides": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
-        },
-        "waycrest-manor": {
             "Fortified": {
                 "key_level": 0,
                 "percent": 0,

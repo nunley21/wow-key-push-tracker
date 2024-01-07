@@ -38,9 +38,12 @@ def main():
     mtime = st.st_mtime
     c_time = time.time()
     dtime = c_time - mtime
-    print(c_time, mtime)
-    print(dtime)
-    if dtime > 240:
+    with open('score.json') as f:
+        json_file = json.load(f)
+
+
+
+    if dtime > 240  and len(json_file) == 6:
 
 
 
@@ -121,9 +124,7 @@ def main():
 
         return team_store
     else:
-        with open('score.json') as f:
-            print("using old data")
-            return json.load(f)
+        return json_file
 
 
 

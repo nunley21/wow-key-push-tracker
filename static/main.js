@@ -18,7 +18,7 @@ function buildTables(data) {
         jumbo.classList.add('container', 'mt-3')
         let jumbo_inner = document.createElement("div");
         jumbo_inner.classList.add('mt-4', 'p-5', 'bg-dark', 'text-white', 'rounded')
-        let team_h1 = document.createElement("h1")
+        let team_a = document.createElement("a")
         let team = groupName.replaceAll('-', ' ')
         const words = team.split(" ");
 
@@ -26,8 +26,14 @@ function buildTables(data) {
             words[i] = words[i][0].toUpperCase() + words[i].substr(1);
         }
         let team_upper = words.join(" ");
-        team_h1.innerText = team_upper
-        jumbo_inner.appendChild(team_h1)
+        team_a.setAttribute('href', "https://raider.io/teams/us/" + groupName)
+        team_a.setAttribute("target", "_blank")
+
+        team_a.innerHTML = "<h1>" + team_upper + "<\h1>"
+        team_a.classList.add('link-success')
+
+
+        jumbo_inner.appendChild(team_a)
 
         const groupTable = document.createElement('table');
         groupTable.classList.add('table', 'table-striped', 'table-bordered', 'table-primary', 'text-center')
