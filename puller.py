@@ -43,7 +43,7 @@ def main():
 
 
 
-    if dtime > 240  or len(json_file) != 6:
+    if dtime > 1  or len(json_file) != 6:
 
 
 
@@ -67,8 +67,10 @@ def main():
                 top_keys = {"Fortified": {}, "Tyrannical": {}}
                 if data:
                     for key in data:
-
-                        if key['summary']['status'] == "finished":
+                        # for i in key["summary"]:
+                        #     print(i)
+                        #
+                        if key["summary"]["time_remaining_ms"] > 0:
                             if key['summary']["weekly_modifiers"][0]["name"] == "Tyrannical":
                                 keys_store_tryan.append(key['summary']['mythic_level'])
                             elif key['summary']["weekly_modifiers"][0]["name"] == "Fortified":
