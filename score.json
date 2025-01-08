@@ -1,100 +1,86 @@
 {
-    "sitomeys-friends": {
-        "Atal'Dazar": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 21,
-                "percent": 79,
-                "plus": "++"
-            }
+    "shambles": {
+        "arakara-city-of-echoes": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "Black Rook Hold": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 22,
-                "percent": 73,
-                "plus": "++"
-            }
+        "city-of-threads": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "DOTI: Galakrond's Fall": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 21,
-                "percent": 66,
-                "plus": "++"
-            }
+        "grim-batol": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "Darkheart Thicket": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
+        "mists-of-tirna-scithe": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "The Everbloom": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 18,
-                "percent": 60,
-                "plus": "++"
-            }
+        "siege-of-boralus": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "Waycrest Manor": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 23,
-                "percent": 87,
-                "plus": "+"
-            }
+        "the-dawnbreaker": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "doti-murozonds-rise": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
+        "the-necrotic-wake": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         },
-        "throne-of-the-tides": {
-            "Fortified": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            },
-            "Tyrannical": {
-                "key_level": 0,
-                "percent": 0,
-                "plus": ""
-            }
+        "the-stonevault": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        }
+    },
+    "stumpjumper-snatchers": {
+        "arakara-city-of-echoes": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "city-of-threads": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "grim-batol": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "mists-of-tirna-scithe": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "siege-of-boralus": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "the-dawnbreaker": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "the-necrotic-wake": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
+        },
+        "the-stonevault": {
+            "key_level": 0,
+            "percent": 0,
+            "plus": ""
         }
     }
 }

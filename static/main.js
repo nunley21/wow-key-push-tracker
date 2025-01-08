@@ -43,10 +43,7 @@ function buildTables(data) {
       <tbody>
     `;
         let header_row = document.createElement("tr")
-        let header_affix = document.createElement("th")
-        let affix_cell = document.createTextNode("Affix")
-        header_affix.appendChild(affix_cell)
-        header_row.appendChild(header_affix)
+
 
         for (let dungeonName in groupData) {
 
@@ -71,67 +68,45 @@ function buildTables(data) {
 
         // Create an array to store dungeon names
 
-        let fort_row = document.createElement("tr");
-        let tyran_row = document.createElement("tr");
+        let table_row = document.createElement("tr");
 
-        let fortcell = document.createElement("td");
-        let fortcellText = document.createTextNode('Fortified');
-        fortcell.appendChild(fortcellText);
-        fort_row.appendChild(fortcell);
-
-        let Tyrannicalcell = document.createElement("td");
-        const TyrannicalcellText = document.createTextNode('Tyrannical');
-        Tyrannicalcell.appendChild(TyrannicalcellText);
-        tyran_row.appendChild(Tyrannicalcell);
         for (const dungeonName in groupData) {
             const dungeon = groupData[dungeonName]
+
 
             // row.appendChild()
             const cell = document.createElement("td");
 
 
 
-            let fortcellText
-            if (typeof dungeon.Fortified.key_level === 'undefined') {
+            let cellText
+            if (typeof dungeon.key_level === 'undefined') {
                 fortcellText = document.createTextNode(` `);
             } else {
-                fortcellText = document.createTextNode(`${dungeon.Fortified.key_level} ${dungeon.Fortified.plus}`);
+                fortcellText = document.createTextNode(`${dungeon.key_level} ${dungeon.plus}`);
             }
 
             cell.appendChild(fortcellText);
-            fort_row.appendChild(cell);
-            groupTable.querySelector('tbody').appendChild(fort_row);
+            table_row.appendChild(cell);
+            groupTable.querySelector('tbody').appendChild(table_row);
 
 
-            const tyrancell = document.createElement("td");
-            let tyrancellText
-            if (typeof dungeon.Tyrannical.key_level === 'undefined') {
-                tyrancellText = document.createTextNode(` `);
-            } else {
-                tyrancellText = document.createTextNode(`${dungeon.Tyrannical.key_level} ${dungeon.Tyrannical.plus}`);
-            }
-
-            tyrancell.appendChild(tyrancellText);
-            tyran_row.appendChild(tyrancell);
-            groupTable.querySelector('tbody').appendChild(tyran_row);
 
         }
         const total_row = document.createElement("tr");
         const total_cell = document.createElement("td");
         total_cell.setAttribute("colspan", 9)
-        let top_tyran_keys = []
-        let top_fort_keys = []
+        let top_keys = []
         for (const dungeonName in groupData) {
             const dungeon = groupData[dungeonName]
-            top_tyran_keys.push(dungeon.Tyrannical.key_level)
-            top_fort_keys.push(dungeon.Fortified.key_level)
-        }
-        let top_3_fort_keys = top_fort_keys.sort((a, b) => b - a).slice(0, 3)
-        let top_3_tyran_keys = top_tyran_keys.sort((a, b) => b - a).slice(0, 3)
-        let fort_sum = top_3_fort_keys.reduce((partialSum, a) => partialSum + a, 0)
-        let tyran_sum = top_3_tyran_keys.reduce((partialSum, a) => partialSum + a, 0)
+            top_keys.push(dungeon.key_level)
 
-        let total_cell_text = document.createTextNode(fort_sum + tyran_sum)
+        }
+        let top_4_fort = top_keys.sort((a, b) => b - a).slice(0, 4)
+
+        let sum = top_4_fort.reduce((partialSum, a) => partialSum + a, 0)
+
+        let total_cell_text = document.createTextNode(sum)
         total_cell.appendChild(total_cell_text);
         total_row.appendChild(total_cell);
         groupTable.querySelector('tbody').appendChild(total_row);
